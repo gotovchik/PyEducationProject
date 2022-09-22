@@ -19,4 +19,4 @@ def what_quarter(x, y):
 
 A = int(input('Введите координату по оси Х:'))
 B = int(input('Введите координату по оси Y:'))
-print(what_quarter(A, B))
+what_quarter(A, B)

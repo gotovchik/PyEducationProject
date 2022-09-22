@@ -1,12 +1,22 @@
-# 3. По заданному номеру дня недели вывести его название
+# 6. Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет,
+# является ли этот день выходным.
+# Пример:
+# o 6 -> да
+# o 7 -> да
+# o 1 -> нет
 
-def day_of_the_week(n):
-    days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-    print(days[n - 1])
+def weekend(n):
+    if 1 <= n <= 7:
+        if n == 6 or n == 7:
+            print('Да')
+        else:
+            print('Нет')
+    else:
+        print('Введен не правильный номер дня!')
 
 
 day = int(input('Введите номер дня недели:'))
-day_of_the_week(day)
-
+weekend(day)
 day = int(input('Введите номер дня недели:'))
-day_of_the_week(day)
+weekend(day)
+
