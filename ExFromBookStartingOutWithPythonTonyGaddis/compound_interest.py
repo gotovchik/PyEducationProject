@@ -22,14 +22,14 @@
 """
 
 
-def get_total_amount(principal_amount, interest_rate, accrual_frequency, years_count):
-    return principal_amount * (1 + interest_rate / accrual_frequency) ** accrual_frequency * years_count
+def get_total_amount(principal_amount, interest_rate, accrual_frequency, month_count):
+    return principal_amount * (1 + (interest_rate / 100) / accrual_frequency) ** accrual_frequency * (month_count / 12)
 
 
-p = float(input('Введите основную сумму депозита:'))
-r = float(input('Введите годовую процентную ставку:'))
+p = float(input('Введите основную сумму депозита в рублях:'))
+r = float(input('Введите годовую процентную ставку в процентах:'))
 n = int(input('Введите частоту начисления процентного дохода в год:'))
-y = int(input('Введите количество лет, на которое положен депозит:'))
+y = int(input('Введите количество месяцев, на которое положен депозит:'))
 
 total_amount = get_total_amount(p, r, n, y)
 
