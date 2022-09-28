@@ -3,14 +3,18 @@
 Позиции (случайные) хранятся в файле file.txt
 (создаётся во время выполнения кода и зависит от количества элементов в списке) в одной строке одно число.
 """
-import random
+from random import randint
+import os
 
 
 def get_multiply_of_elements_from_file(arr, path):
     result = 1
+    print('Elements for product:', end=' ')
     data = open(path, 'r')
     for line in data:
+        print(arr[int(line)], end=', ')
         result *= arr[int(line)]
+    data.close()
     return result
 
 
@@ -19,20 +23,18 @@ def get_collection(n):
 
 
 def fill_file(path, lines_count, maximum):
-    f = open(path, 'w')
+    data = open(path, 'w')
     for i in range(1, lines_count + 1):
-        f.write(str(random.randint(0, maximum)) + "\n")
+        data.write(str(randint(0, maximum)) + "\n")
+    data.close()
 
 
 p = 'file.txt'
 number = int(input('Enter the number: '))
-count = int(input("Enter the count of numbers to be multiplied: "))
 col = get_collection(number)
+print(*col)
+count = int(input("Enter the count of numbers to be multiplied: "))
 fill_file(p, count, len(col) - 1)
 product = get_multiply_of_elements_from_file(col, p)
-print(f'The product of the elements numbered from the file is {product}')
-
-
-
-
-
+print(f'the product of the elements numbered from the file is {product}')
+os.remove(p)
