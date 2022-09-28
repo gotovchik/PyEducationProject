@@ -4,7 +4,7 @@
 (создаётся во время выполнения кода и зависит от количества элементов в списке) в одной строке одно число.
 """
 from random import randint
-import os
+from os import remove
 
 
 def get_multiply_of_elements_from_file(arr, path):
@@ -37,4 +37,4 @@ count = int(input("Enter the count of numbers to be multiplied: "))
 fill_file(p, count, len(col) - 1)
 product = get_multiply_of_elements_from_file(col, p)
 print(f'the product of the elements numbered from the file is {product}')
-os.remove(p)
+remove(p)
