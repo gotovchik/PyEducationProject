@@ -6,9 +6,7 @@
 def get_digits(num):
     col = []
     for ch in str(num):
-        if ch == '.':
-            continue
-        else:
+        if ch.isdigit():
             col.append(int(ch))
     return col
 
