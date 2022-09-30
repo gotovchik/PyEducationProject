@@ -13,9 +13,9 @@ def negafibonacci(n):
     return negafibonacci(n + 2) - negafibonacci(n + 1)
 
 
-num = int(input("enter the number: "))
+num = int(input("Enter the number: "))
 col = list(range(-num, num + 1))
-print(col)
+print(f'This is a list of numbers from -N to N:\n{col:}')
 
 for i in range(len(col)):
     if col[i] > 0:
@@ -23,7 +23,7 @@ for i in range(len(col)):
     if col[i] < 0:
         col[i] = negafibonacci(col[i])
 
-print(col)
+print(f'This is a list of Fibonacci sequence numbers for numbers from -N to N:\n{col}')
 
 
 
