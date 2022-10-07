@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+!/homework_04/file1.txt
+
+!/homework_04/file2.txt
