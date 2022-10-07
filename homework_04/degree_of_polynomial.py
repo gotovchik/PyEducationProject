@@ -2,52 +2,58 @@
 # Сформировать случайным образом список коэффициентов (значения от 0 до 100)
 # многочлена и записать в файл многочлен степени k и приравняйте его к нулю.
 
-from random import randrange
+from random import randint
 
 
-def get_polynomial(k):
-    pol = ''
-    while k != 0:
-        ratio = randrange(0, 100)
-        if ratio == 0:
-            k -= 1
-        elif ratio == 1:
-            if k == 1:
-                pol += f'x + {randrange(1, 100)} = 0'
-            else:
-                pol += f'x^{k} + '
-        else:
-            if k == 1:
-                pol += f'{ratio}x + {randrange(1, 100)} = 0'
-            else:
-                pol += f'{ratio}x^{k} + '
-        k -= 1
-    return pol
+# создаем список коэффициентов
+def get_coefficient(k):
+    return [randint(0, 101) for i in range(k + 1)]
 
 
+# запись многочлена в виде строки
+def get_poly(col):
+    col = col[::-1]
+    poly = ""
+    if len(col) < 1:
+        poly = "x = 0"
+    else:
+        for i in range(len(col)):
+            if i != len(col) - 1 and col[i] != 0 and i != len(col) - 2:
+                poly += f'{col[i]}x^{len(col) - i - 1}'
+                if col[i+1] != 0 or col[i+2] != 0:
+                    poly += ' + '
+            elif i == len(col) - 2 and col[i] != 0:
+                poly += f'{col[i]}x'
+                if col[i+1] != 0 or col[i+2] != 0:
+                    poly += ' + '
+            elif i == len(col) - 1 and col[i] != 0:
+                poly += f'{col[i]} = 0'
+            elif i == len(col) - 1 and col[i] == 0:
+                poly += " = 0"
+    return poly
+
+
+# запись в файл
 def write_to_file(file, x):
     with open(file, 'w') as data:
         data.write(x)
 
 
+# чтение файла
 def read_file(file):
     with open(file, 'r') as data:
-        print(data.read())
+        return data.readlines()
 
 
 degree = int(input('Введите степень первого многочлена:'))
-polynomial = get_polynomial(degree)
+polynomial = get_poly(get_coefficient(degree))
 path = 'file1.txt'
 write_to_file(path, polynomial)
-read_file(path)
+print(read_file(path))
 
 degree2 = int(input('Введите степень второго многочлена:'))
-polynomial2 = get_polynomial(degree2)
+polynomial2 = get_poly(get_coefficient(degree2))
 path2 = 'file2.txt'
 write_to_file(path2, polynomial2)
-read_file(path2)
-
-
-
-
+print(read_file(path2))
 
