@@ -133,3 +133,8 @@ dmypy.json
 /homework_05/decode_data.txt
 /homework_05/encode_data.txt
 /homework_05/input_data.txt
+!/homework_05/decode_data.txt
+
+!/homework_05/encode_data.txt
+
+!/homework_05/input_data.txt
