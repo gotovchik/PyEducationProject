@@ -10,44 +10,64 @@
 from random import getrandbits
 
 
-def priority(f):  # очередность
-    return player1 if f else player2
+def get_name(p1, p2, f):  # очередность
+    return p1 if f else p2
 
 
-def make_move():
-    while ValueError:
+def input_move(value):
+    f = True
+    while f:
+        x = input('Введите количество конфет, которое хотите взять: ')
         try:
-            x = int(input('Сколько конфет возьмешь?'))
-        except ValueError:
-            print('Введено не число. Попробуйте еще раз')
-        else:
-            if 1 >= x >= max_take:
-                return x
+            x = int(x)
+            if x > value or x < 1:
+                print('Можно взять от 1 до 28 конфет включительно. Попробуйте еще раз.')
             else:
-                print('Нужно взять от 1 до 28 конфет. Попробуй еще раз!')
-                make_move()
-        # TODO
+                f = not f
+        except ValueError:
+            print('Вы ввели вовсе не число. Попробуйте еще раз')
+    return x
 
 
-def game():
-    # TODO
-    pass
+def main():
+
+    greeting = 'Приветствую вас в игре "2021 конфета"!\n' \
+               'Правила просты: На столе лежит 2021 конфета,\n' \
+               'игроки поочереди берут не более 28 конфет за один ход.\n' \
+               'Тот, кто сделает последний ход - забирает все конфеты себе и выигрывает.'
+    print(greeting)
+
+    player1 = input('Как зовут первого игрока? Введите имя: ')
+    player2 = input('А второго?: ')
+    flag = bool(getrandbits(1))
+
+    candy_count = 2021
+    max_take = 28
+    print(f'Случайным образом компьютер выбрал, что первым ходит {get_name(player1, player2, flag)}')
+    print('Начнем игру!'
+          '')
+    while candy_count > 28:
+        name = get_name(player1, player2, flag)
+        print(f'Ходит {name}')
+        take = input_move(max_take)
+        candy_count -= take
+        print(f'{name} взял {take} конфет. На столе осталось {candy_count}')
+        flag = not flag
+
+    print(f'Последний ход за {get_name(player1, player2, flag)} и он забирает все оставшиеся конфеты и конфеты оппонента.\n'
+          f'Поздравляем с победой!\n'
+          f'')
 
 
-value = 2021
-max_take = 28
-greeting = 'Приветствую вас в игре "2021 конфета"!\n' \
-           'Правила просты: На столе лежит 2021 конфета,\n' \
-           'игроки поочереди берут не более 28 конфет за один ход.\n' \
-           'Тот, кто сделает последний ход - забирает все конфеты себе и выигрывает.'
-
-print(greeting)
-player1 = input('Как зовут первого игрока? Введите имя: ')
-player2 = input('А второго? ')
-flag = bool(getrandbits(1))
+if __name__ == '__main__':
+    main()
 
 
-make_move()
+
+
+
+
+
 
 
 
