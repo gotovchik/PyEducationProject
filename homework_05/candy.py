@@ -54,13 +54,12 @@ def main():
         print(f'{name} взял {take} конфет. На столе осталось {candy_count}')
         flag = not flag
 
-    print(f'Последний ход за {get_name(player1, player2, flag)} и он забирает все оставшиеся конфеты и конфеты оппонента.\n'
-          f'Поздравляем с победой!\n'
-          f'')
+    print(f'Последний ход за {get_name(player1, player2, flag)} и он забирает все оставшиеся'
+          f' конфеты и конфеты оппонента.\n'
+          f'Поздравляем с победой!')
 
 
-if __name__ == '__main__':
-    main()
+main()
 
 
 
