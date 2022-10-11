@@ -22,7 +22,7 @@ def user_input(symbol):  # обработка ввода пользовател�
         break
 
 
-def check_win():
+def check_win():  # проверка выигрышных позиций
     for i in win_positions:
         if table[i[0] - 1] == table[i[1] - 1] == table[i[2] - 1]:
             return table[i[1] - 1]

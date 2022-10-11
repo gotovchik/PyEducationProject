@@ -9,6 +9,7 @@
 что дата не является магической.
 """
 
+
 def is_magic_date(day, month, year):
     two_digit_year = year % 100
 

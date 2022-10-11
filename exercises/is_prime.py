@@ -8,3 +8,10 @@ def is_prime(num):
         i += d
         d = 6 - d
     return prime
+
+
+number = int(input('Введите число: '))
+if is_prime(number):
+    print('Это простое число!')
+else:
+    print('Это не простое число!')

@@ -19,5 +19,5 @@ def divisors3(n):
 
 # Time: 3675ms
 # even don't need return true, cause comparison operator will return boolean
-def divisors2(n):
-    return sum([n % x == 0 for x in range(1, n + 1)])
+def get_divisors(number):
+    return sum([number % x == 0 for x in range(1, number + 1)])
