@@ -27,5 +27,3 @@ print(int(bin(45)[2:]), end=" ")  # 101101
 print(int(bin(3)[2:]), end=" ")  # 11
 print(int(bin(2)[2:]), end=" ")  # 10
 print()
-
-

@@ -7,14 +7,13 @@ from random import randint
 from os import remove
 
 
-def get_multiply_of_elements_from_file(arr, path):
+def get_multiply_of_elements_from_file(arr, path):  # перемножение элементов из файла
     result = 1
     print('Elements for product:', end=' ')
-    data = open(path, 'r')
-    for line in data:
-        print(arr[int(line)], end=', ')
-        result *= arr[int(line)]
-    data.close()
+    with open(path, 'r') as data:
+        for line in data:
+            print(arr[int(line)], end=', ')
+            result *= arr[int(line)]
     return result
 
 
