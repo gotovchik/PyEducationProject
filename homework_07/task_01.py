@@ -16,30 +16,26 @@ from time import sleep
 
 
 class TrafficLight:
-    __color: str = ''
+    __color = 'red'
 
-    @staticmethod
-    def running(__color: str = 'red', i: int = 3):
+    def running(self, i=3):
         while i != 0:
-            if __color == 'red':
-                print(__color)
+            if self.__color == 'red':
+                print(self.__color)
                 sleep(7)
-                __color = 'yellow'
+                self.__color = 'yellow'
                 i -= 1
-            elif __color == 'yellow':
-                print(__color)
+            elif self.__color == 'yellow':
+                print(self.__color)
                 sleep(2)
-                __color = 'green'
+                self.__color = 'green'
                 i -= 1
-            elif __color == 'green':
-                print(__color)
+            elif self.__color == 'green':
+                print(self.__color)
                 sleep(5)
-                __color = 'red'
+                self.__color = 'red'
                 i -= 1
-        return __color
 
 
 light = TrafficLight()
-COLOR = 'red'
-CYCLE = 10
-light.running(COLOR, CYCLE)
+light.running(5)
