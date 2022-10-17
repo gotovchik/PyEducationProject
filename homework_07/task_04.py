@@ -68,24 +68,24 @@ class PoliceCar(Car):
     pass
 
 
-sport = SportCar('Lamborghini', 'Red', 260, 0)
+sport = SportCar('Lamborghini', 'Красная', 260, 0)
 sport.go()
 sport.turn('налево')
 sport.show_speed()
 sport.stop
 
-police = PoliceCar('Ford', 'Black and White', 120, 1)
+police = PoliceCar('Ford', 'Черно-белая', 120, 1)
 police.go()
 police.turn('направо')
 police.show_speed()
 police.stop()
 
-work = WorkCar('Caterpillar', 'Yellow', 55, 0)
+work = WorkCar('Caterpillar', 'Желтая', 55, 0)
 work.go()
 work.show_speed()
 work.stop()
 
-town = TownCar('Toyota', 'White', 80, 0)
+town = TownCar('Toyota', 'Белая', 80, 0)
 town.go()
 town.turn('налево')
 town.turn('направо')
