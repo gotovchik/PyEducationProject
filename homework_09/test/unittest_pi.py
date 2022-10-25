@@ -1,6 +1,6 @@
 import unittest
 
-from homework_09.pi import truncate
+from homework_09.code.pi import truncate
 
 
 class TestTruncate(unittest.TestCase):
