@@ -1,5 +1,4 @@
 import unittest
-
 from homework_09.code.prime import is_prime
 
 
