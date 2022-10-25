@@ -17,3 +17,7 @@ class TestClock(unittest.TestCase):
 
     def test_clock4(self):
         self.assertEqual(past(1, 0, 0), 3600000)
+
+
+if __name__ == '__main__':
+    unittest.main()
