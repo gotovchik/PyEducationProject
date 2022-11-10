@@ -1,7 +1,7 @@
 class Size:
     def __set__(self, instance, value):
         if 0 > value:
-            raise ValueError('Размер не может быть меньше 0')
+            raise ValueError('Размер не может быть меньше 0 и больше 250')
         instance.__dict__[self.name] = value
 
     def __set_name__(self, owner, name):
