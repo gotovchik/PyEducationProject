@@ -10,3 +10,8 @@
 --- b'class' - используйте маркировку b''
 --- используйте списки и циклы, не дублируйте функции
 """
+WORDS = [b'class', b'function', b'method']
+for item in WORDS:
+    print(f'тип переменной: {type(item)}\n'
+          f'содержимое переменной: {item}\n'
+          f'Длина строки: {len(item)}\n')

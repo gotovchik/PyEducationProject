@@ -9,3 +9,9 @@
 --- обязательно!!! усложните задачу, "отловив" и обработав исключение,
 придумайте как это сделать
 """
+WORDS = ['attribute', 'класс', 'функция', 'type']
+for item in WORDS:
+    if not item.isascii():
+        print(f"{item} - 'нельзя представить в байтовом типе'")
+    else:
+        print(f"{item} - в байтовом типе: {bytes(item, encoding='ASCII')}")

@@ -8,3 +8,9 @@
 Подсказки:
 --- используйте списки и циклы, не дублируйте функции
 """
+ENC_WORDS = []
+for item in ['разработка', 'администрирование', 'protocol', 'standard']:
+    ENC_WORDS.append(item.encode())
+    print(item.encode())
+for item in ENC_WORDS:
+    print(item.decode())
