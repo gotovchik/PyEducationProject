@@ -21,3 +21,24 @@
 --- обратите внимание на чтение файла в режиме rb
 для последующей переконвертации в нужную кодировку
 """
+from chardet import detect
+
+with open('test_file.txt', 'rb') as file:
+    text = file.read()
+detected = detect(text)
+#print(detected)
+
+encoding = detected["encoding"]
+text = text.decode(encoding)
+
+with open('test_file.txt', 'w', encoding='utf-8') as f_n:
+    f_n.write(text)
+
+with open('test_file.txt', 'r', encoding="utf-8") as ff:
+    text = ff.read()
+    print(text)
+
+
+
+
+
